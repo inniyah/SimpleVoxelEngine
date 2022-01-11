@@ -19,12 +19,12 @@ bool UniformChunk::tick(float timeDelta)
 
 void UniformChunk::forEachVoxel(const forEachVoxelFunction& func, bool includeNull) const
 {
-	unsigned int vectorIndex = 0;
-	for (int z = 0; z < Depth; z++)
+	//~ unsigned int vectorIndex = 0;
+	for (unsigned int z = 0; z < Depth; z++)
 	{
-		for (int y = 0; y < Height; y++)
+		for (unsigned int y = 0; y < Height; y++)
 		{
-			for (int x = 0; x < Width; x++)
+			for (unsigned int x = 0; x < Width; x++)
 			{
 				func(_voxel, x, y, z);
 			}

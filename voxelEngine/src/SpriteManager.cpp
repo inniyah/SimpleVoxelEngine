@@ -3,7 +3,7 @@
 #include "ISprite.h"
 #include "ICamera.h"
 #include "ILightSource.h"
-#include <glm/detail/type_vec3.hpp>
+#include <glm/vec3.hpp>
 #include "ISpriteVoxel.h"
 #include "ISpriteCollisionSet.h"
 #include "SpriteCollision.h"

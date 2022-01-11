@@ -1,5 +1,5 @@
 #include <glad/glad.h>
-#include <glfw/glfw3.h>
+#include <GLFW/glfw3.h>
 #include "VoxelEngine.h"
 #include "MouseAndKeyboardCameraControllerInput.h"
 #include "SimpleLight.h"
@@ -20,8 +20,8 @@ static void error_callback(int error, const char* description);
 
 int main(int argc, char** argv) {
 	std::string programPath(argv[0]);
-	size_t lastSlash = programPath.find_last_of('\\');
-	std::string shaderPath = programPath.substr(0, lastSlash) + "\\shaders\\";
+	size_t lastSlash = programPath.find_last_of('/');
+	std::string shaderPath = programPath.substr(0, lastSlash) + "/../../voxelEngine/src/shaders/";
 	std::string spritePath = programPath.substr(0, lastSlash + 1);
 
 	GLFWwindow* window;

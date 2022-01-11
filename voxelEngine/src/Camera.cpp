@@ -1,6 +1,6 @@
 #include "Camera.h"
 #include "ICameraControllerInput.h"
-#include <glm/gtc/matrix_transform.inl>
+#include <glm/gtc/matrix_transform.hpp>
 
 // default camera position is at world origin looking towards -z
 Camera::Camera() : Camera(0.0f, 0.0f, 0.0f, 3.14f, 0.0f, 60.0f, 200.0f)

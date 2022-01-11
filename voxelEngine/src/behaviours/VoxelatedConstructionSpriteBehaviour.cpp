@@ -41,7 +41,7 @@ bool VoxelatedConstructionSpriteBehaviour::tick(ISpriteManager& spriteManager, c
 	}
 
 	std::shared_ptr<IVoxelContainer> voxelContainer = std::dynamic_pointer_cast<IVoxelContainer> (sprite);
-	bool requireRebuild = false;
+	//~ bool requireRebuild = false;
 	_lastUpdate += timeDelta;
 	spriteSize size = sprite->getSize();
 	std::shared_ptr<std::vector<std::shared_ptr<IVoxel>>> voxelsToUpdate = std::make_shared<std::vector<std::shared_ptr<IVoxel>>>();

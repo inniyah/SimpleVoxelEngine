@@ -1,4 +1,5 @@
 #include "PerlinNoise.h"
+#include <cmath>
 
 PerlinNoise::PerlinNoise(int repeat) : _repeat(repeat)
 {

@@ -2,7 +2,7 @@
 #include "Chunk.h"
 #include "IChunkManager.h"
 #include "GreyScaleVoxel.h"
-
+#include <string>
 
 ImageSourceChunkFactory::ImageSourceChunkFactory(std::string sourceImageFilename, bool inverseHeight, bool inverseColor, bool isBlackAndWhite) : _image(sourceImageFilename.c_str()), _inverseHeight(inverseHeight), _inverseColor(inverseColor), _isBlackAndWhite(isBlackAndWhite)
 {

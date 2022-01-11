@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include <memory>
-#include <glfw/glfw3.h>
+#include <GLFW/glfw3.h>
 #include "IVoxel.h"
 
 class VoxelGeometry

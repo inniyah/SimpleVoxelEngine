@@ -3,7 +3,7 @@
 #include "VoxelEngineException.h"
 #include "ISpriteBehaviour.h"
 #include "ISpriteManager.h"
-#include <glm/gtc/matrix_transform.inl>
+#include <glm/gtc/matrix_transform.hpp>
 #include <algorithm>
 
 VoxelSprite::VoxelSprite(const spriteSize& spriteSize, const spriteVec3& spritePosition) :
@@ -12,9 +12,9 @@ VoxelSprite::VoxelSprite(const spriteSize& spriteSize, const spriteVec3& spriteP
 	_frameUpdateTime(0),
 	_size(spriteSize),
 	_position(spritePosition),
+	_velocity(0.0f, 0.0f, 0.0f),
 	_aabb(spritePosition.x, spritePosition.y, spritePosition.z, spritePosition.x + spriteSize.width, spritePosition.y + spriteSize.height, spritePosition.z + spriteSize.depth),
 	_type(0),
-	_velocity(0.0f, 0.0f, 0.0f),
 	_cumulativeVelocity(0.0f,0.0f,0.0f)
 {
 	unsigned size = spriteSize.width * spriteSize.height * spriteSize.depth;
@@ -33,9 +33,9 @@ VoxelSprite::VoxelSprite(const spriteSize& spriteSize, const spriteVec3& spriteP
 	_frameUpdateTime(0),
 	_size(spriteSize),
 	_position(spritePosition),
+	_velocity(0.0f, 0.0f, 0.0f),
 	_aabb(spritePosition.x, spritePosition.y, spritePosition.z, spritePosition.x + spriteSize.width, spritePosition.y + spriteSize.height, spritePosition.z + spriteSize.depth),
 	_type(0),
-	_velocity(0.0f, 0.0f, 0.0f),
 	_cumulativeVelocity(0.0f, 0.0f, 0.0f)
 {
 	if (voxels.size() != (spriteSize.width * spriteSize.height * spriteSize.depth))
@@ -48,12 +48,12 @@ VoxelSprite::VoxelSprite(const spriteSize& spriteSize, const spriteVec3& spriteP
 
 VoxelSprite::VoxelSprite(const spriteSize& spriteSize, const spriteVec3& spritePosition, const std::vector<std::vector<std::shared_ptr<ISpriteVoxel>>>& frameVoxels, float timeBetweenFrames, float frameChangeDeferral) :
 	_frameIndex(0),
-	_size(spriteSize),
-	_position(spritePosition),
-	_type(0),
 	_timeBetweenFrames(timeBetweenFrames),
 	_frameUpdateTime(-frameChangeDeferral),
+	_size(spriteSize),
+	_position(spritePosition),
 	_velocity(0.0f, 0.0f, 0.0f),
+	_type(0),
 	_cumulativeVelocity(0.0f, 0.0f, 0.0f)
 {
 	std::for_each(std::begin(frameVoxels), std::end(frameVoxels), [this, spriteSize](const std::vector<std::shared_ptr<ISpriteVoxel>>& voxels)

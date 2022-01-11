@@ -23,11 +23,11 @@ std::shared_ptr<IVoxel> Chunk::getVoxel(unsigned int x, unsigned int y, unsigned
 void Chunk::forEachVoxel(const forEachVoxelFunction& func, bool includeNull) const
 {
 	unsigned int vectorIndex = 0;
-	for (int z = 0; z < Depth; z++)
+	for (unsigned int z = 0; z < Depth; z++)
 	{
-		for (int y = 0; y < Height; y++)
+		for (unsigned int y = 0; y < Height; y++)
 		{
-			for (int x = 0; x < Width; x++)
+			for (unsigned int x = 0; x < Width; x++)
 			{
 				const std::shared_ptr<IVoxel>& voxel = _voxels[vectorIndex];
 				vectorIndex++;

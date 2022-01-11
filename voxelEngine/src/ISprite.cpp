@@ -4,6 +4,7 @@
 #include "VoxelSprite.h"
 #include <algorithm>
 #include "SpriteVoxel.h"
+#include <cstring>
 
 class MV_Vec3i {
 public:
