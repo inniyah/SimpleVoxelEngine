@@ -4,7 +4,7 @@
 
 UniformChunk::UniformChunk(const std::shared_ptr<IVoxel>& voxel) : _voxel(voxel)
 {
-	
+
 }
 
 
@@ -41,7 +41,7 @@ void UniformChunk::render(const ICamera& camera, const ILightSource& light) cons
 void UniformChunk::rebuildGeometry(const IChunkManager& chunkManager, unsigned chunkX, unsigned chunkY, unsigned chunkZ)
 {
 	_chunkGeometry = std::make_shared<VoxelContainerGeometry>(chunkManager, *this, chunkX, chunkY, chunkZ);
-	
+
 }
 
 void UniformChunk::prepareRenderer()

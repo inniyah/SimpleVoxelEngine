@@ -11,13 +11,13 @@ private:
 	GLuint _simpleColored;
 	GLuint loadShaders(const std::string vertexPath, const std::string fragmentPath) const;
 	ShaderManager(std::string shaderPath);
-public:	
+public:
 	static void init(std::string shaderPath);
 	static std::unique_ptr<ShaderManager> instance;
-	
+
 	~ShaderManager();
-	
-	GLuint getSimpleColored() const;	
+
+	GLuint getSimpleColored() const;
 };
 
 class ShaderManagerInitialisedException : public std::logic_error

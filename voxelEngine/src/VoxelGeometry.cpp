@@ -101,7 +101,7 @@ void VoxelGeometry::AddVerticesAndColors(const IVoxel& voxel,
 	};
 	unsigned verticesArraySize = sizeof(vertexBufferData) / sizeof(GLfloat);
 	vertices.insert(vertices.end(), &vertexBufferData[0], &vertexBufferData[verticesArraySize]);
-	
+
 	size_t numberOfVertices = verticesArraySize / 3;
 	for (int triangleIndex = 0; triangleIndex < numberOfVertices; triangleIndex++)
 	{
@@ -109,5 +109,5 @@ void VoxelGeometry::AddVerticesAndColors(const IVoxel& voxel,
 		colors.push_back(voxelColor.r);
 		colors.push_back(voxelColor.g);
 		colors.push_back(voxelColor.b);
-	}	
+	}
 }

@@ -186,7 +186,7 @@ std::shared_ptr<std::vector<std::shared_ptr<ISpriteVoxel>>> loadSpriteVoxels(std
 		std::shared_ptr<ISpriteVoxel> voxel = std::make_shared<SpriteVoxel>(voxelColor, true);
 		(*spriteVoxels)[getVoxelIndex(voxelSpriteSize, mvVoxel.x, mvVoxel.z, mvVoxel.y)] = voxel;
 	});
-	
+
 	return spriteVoxels;
 }
 

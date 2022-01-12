@@ -17,10 +17,10 @@ VoxelatedConstructionSpriteBehaviour::~VoxelatedConstructionSpriteBehaviour()
 void VoxelatedConstructionSpriteBehaviour::attach(ISpriteManager& spriteManager, const std::shared_ptr<ISprite>& sprite)
 {
 	bool requireRebuild = false;
-	
+
 	const std::shared_ptr<IVoxelContainer> voxelContainer = std::dynamic_pointer_cast<IVoxelContainer> (sprite);
 	voxelContainer->forEachVoxel([&requireRebuild](const std::shared_ptr<IVoxel>& voxel, GLuint, GLuint, GLuint)
-	{		
+	{
 		const std::shared_ptr<ISpriteVoxel>& spriteVoxel = std::dynamic_pointer_cast<ISpriteVoxel>(voxel);
 		requireRebuild |= spriteVoxel->getIsActive();
 		spriteVoxel->setIsActive(false);
@@ -29,7 +29,7 @@ void VoxelatedConstructionSpriteBehaviour::attach(ISpriteManager& spriteManager,
 
 void VoxelatedConstructionSpriteBehaviour::detach(ISpriteManager& spriteManager, const std::shared_ptr<ISprite>& sprite)
 {
-	
+
 }
 
 bool VoxelatedConstructionSpriteBehaviour::tick(ISpriteManager& spriteManager, const std::shared_ptr<ISprite>& sprite, float timeDelta)
@@ -80,7 +80,7 @@ bool VoxelatedConstructionSpriteBehaviour::tick(ISpriteManager& spriteManager, c
 		if (voxel != nullptr)
 		{
 			_lastUpdate -= _updateDelay;
-		}		
+		}
 	}
 
 	if (!voxelsToUpdate->empty())

@@ -41,7 +41,7 @@ void computeMatricesFromInputs() {
 	{
 		glfwGetWindowSize(window, &windowWidth, &windowHeight);
 	}
-	
+
 
 	// glfwGetTime is called only once, the first time this function is called
 	static double lastTime = glfwGetTime();

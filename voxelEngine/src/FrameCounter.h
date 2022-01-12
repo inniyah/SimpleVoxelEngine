@@ -10,7 +10,7 @@ class FrameCounter
 public:
 	FrameCounter() : _lastTime(glfwGetTime()), _frames(0)
 	{
-		
+
 	}
 
 	void tick()

@@ -13,7 +13,7 @@ const unsigned DefaultCollisionPoolSize = 100;
 
 SpriteManager::SpriteManager() : _numberOfCollidingSprites(0), _collisionTree(DefaultCollisionPoolSize)
 {
-	_spritesRequiringCollisionUpdate.reserve(DefaultCollisionPoolSize);	
+	_spritesRequiringCollisionUpdate.reserve(DefaultCollisionPoolSize);
 }
 
 
@@ -67,11 +67,11 @@ bool SpriteManager::tick(float timeDelta)
 		if (sprite->tick(*this, timeDelta))
 		{
 			_spritesRequiringRebuild.push_back(sprite);
-		}		
+		}
 	});
-	
+
 	rebuildGeometry();
-	_spritesRequiringRebuild.clear();	
+	_spritesRequiringRebuild.clear();
 	return true;
 }
 
@@ -143,7 +143,7 @@ std::shared_ptr<std::forward_list<SpriteCollision>> SpriteManager::findCollision
 {
 	std::forward_list<std::shared_ptr<ISprite>> sprites;
 	sprites.push_front(sprite);
-	return findCollisionsForSprites(sprites);	
+	return findCollisionsForSprites(sprites);
 }
 
 std::shared_ptr<std::forward_list<SpriteCollision>> SpriteManager::findCollisionsForSprites(const std::forward_list<std::shared_ptr<ISprite>>& sprites) const

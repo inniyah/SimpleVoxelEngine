@@ -70,7 +70,7 @@ void ChunkManager::forEachChunk(const forEachChunkFunction& func) const
 			{
 				const std::shared_ptr<IChunk>& chunk= _chunks[vectorIndex];
 				vectorIndex++;
-				func(chunk, x, y, z);				
+				func(chunk, x, y, z);
 			}
 		}
 	}
@@ -90,7 +90,7 @@ void ChunkManager::render(const ICamera& camera, const ILightSource& light) cons
 		if (chunkInCamera(camera, x, y, z))
 		{
 			chunk->render(camera, light);
-		}		
+		}
 	});
 }
 
@@ -98,7 +98,7 @@ bool ChunkManager::chunkInCamera(const ICamera& camera, unsigned x, unsigned y, 
 {
 	glm::vec3 frontLeftBottom(x * IChunk::Width, y * IChunk::Height, z * IChunk::Depth);
 	if (camera.pointInCamera(frontLeftBottom)) return true;
-	
+
 	glm::vec3 frontLeftTop(x * IChunk::Width, y * IChunk::Height + IChunk::Height, z * IChunk::Depth);
 	if (camera.pointInCamera(frontLeftTop)) return true;
 
@@ -154,7 +154,7 @@ void ChunkManager::rebuildGeometry()
 						rebuildComplete.notify_one();
 					}
 				}
-			}));			
+			}));
 		}
 	});
 	rebuildComplete.wait(rebuildCompleteLock);
@@ -216,8 +216,8 @@ bool ChunkManager::tick(float timeDelta)
 		}
 	});
 
-	constructChunks(chunksRequiringConstruction);	
-	
+	constructChunks(chunksRequiringConstruction);
+
 	rebuildGeometry();
 
 	_chunksRequiringRebuild.clear();

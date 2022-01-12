@@ -41,7 +41,7 @@ class VoxelSprite : public ISprite, public IVoxelContainer, public std::enable_s
 		std::shared_ptr<VoxelRenderer> renderer;
 	};
 	typedef std::shared_ptr<VoxelSpriteFrame> VoxelSpriteFramePtr;
-	
+
 	int _frameIndex;
 	float _timeBetweenFrames;
 	float _frameUpdateTime;
@@ -62,7 +62,7 @@ public:
 	VoxelSprite(const spriteSize& spriteSize, const spriteVec3& spritePosition, const std::vector<std::shared_ptr<ISpriteVoxel>>& voxels);
 	VoxelSprite(const spriteSize& spriteSize, const spriteVec3& spritePosition, const std::vector<std::vector<std::shared_ptr<ISpriteVoxel>>>& frameVoxels, float timeBetweenFrames, float frameChangeDeferral=0.0f);
 	spriteSize getSize() const override { return _size; };
-	spriteVec3 getPosition() const override { return _position; }	
+	spriteVec3 getPosition() const override { return _position; }
 	void setPosition(spriteVec3 newPos) override
 	{
 		_position = newPos;
@@ -86,7 +86,7 @@ public:
 	void cheapUpdate(const std::shared_ptr<IVoxel>& voxel) const override;
 	unsigned getType() const override { return _type; };
 	void setType(unsigned type) override { _type = type; }
-	bool collidesWith(const ISprite& sprite) const override;	
+	bool collidesWith(const ISprite& sprite) const override;
 
 	// IAAAB
 	AABB getAABB() const override { return _aabb; } // TODO: when we add velocity we will grow the AABB by the velocity to reduce tree modification operations

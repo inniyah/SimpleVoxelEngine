@@ -14,5 +14,5 @@ public:
 	virtual std::shared_ptr<IVoxel> getVoxel(unsigned int x, unsigned int y, unsigned int z) const = 0;
 	virtual unsigned getContainerWidthInVoxels() const = 0;
 	virtual unsigned getContainerHeightInVoxels() const = 0;
-	virtual unsigned getContainerDepthInVoxels() const = 0;	
+	virtual unsigned getContainerDepthInVoxels() const = 0;
 };

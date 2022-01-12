@@ -63,7 +63,7 @@ public:
 	virtual unsigned getType() const = 0;
 	virtual void setType(unsigned type) = 0;
 	virtual bool collidesWith(const ISprite& sprite) const = 0;
-	
+
 	static std::shared_ptr<ISprite> load(std::string spriteFile, unsigned type=0);
 	static std::shared_ptr<ISprite> load(const std::vector<std::string>& spriteFrameFilenames, float timeBetweenFrames, float frameChangeDeferral=0.0f, unsigned type=0);
 };

@@ -60,9 +60,9 @@ VoxelContainerGeometry::VoxelContainerGeometry(const IVoxelContainer& voxelWorld
 					visibilites.push_back(voxel->getIsActive() ? 1.0f : 0.0f);
 				}
 				_visibilityIndexes[voxel] = voxelIndex(priorVisibilitySize, visibilites.size() - 1);
-			}			
+			}
 		}
-	});	
+	});
 }
 
 VoxelContainerGeometry::~VoxelContainerGeometry()

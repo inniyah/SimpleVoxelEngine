@@ -14,7 +14,7 @@ public:
 	virtual ~IChunkManager() = default;
 	virtual const std::shared_ptr<IChunk>& getChunkWithChunkCoordinates(unsigned int x, unsigned int y, unsigned int z) const = 0;
 	virtual const std::shared_ptr<IChunk>& getChunkWithVoxelCoordinates(unsigned int x, unsigned int y, unsigned int z) const = 0;
-	virtual void forEachChunk(const forEachChunkFunction& func) const = 0;	
+	virtual void forEachChunk(const forEachChunkFunction& func) const = 0;
 	virtual unsigned int getWidth() const = 0;
 	virtual unsigned int getHeight() const = 0;
 	virtual unsigned int getDepth() const = 0;

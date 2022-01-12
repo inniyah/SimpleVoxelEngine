@@ -25,7 +25,7 @@ Camera::Camera(float x,
 		_frustrumHeight(0.0f),
 		_tang(0.0f)
 {
-	
+
 }
 
 #define HALF_ANG2RAD 3.14159265358979323846/360.0 

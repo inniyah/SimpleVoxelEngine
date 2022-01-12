@@ -95,7 +95,7 @@ bool VoxelSprite::tick(ISpriteManager& spriteManager, float timeDelta)
 
 	std::for_each(std::begin(toRemove), std::end(toRemove), [&spriteManager, this](const std::shared_ptr<DeferredSpriteBehaviourDecorator>& behaviour) {
 		_behaviours.remove(behaviour);
-		behaviour->detach(spriteManager, shared_from_this());		
+		behaviour->detach(spriteManager, shared_from_this());
 	});
 
 	return false;
@@ -168,7 +168,7 @@ void VoxelSprite::rebuildGeometry()
 	{
 		frame->geometry = std::make_shared<VoxelContainerGeometry>(*this, *this, 0, 0, 0); // sprites are translated in the vertex shader so the geometry is always built around the origin
 		_frameIndex++;
-	});	
+	});
 	_frameIndex = oldFrameIndex;
 }
 
@@ -179,7 +179,7 @@ void VoxelSprite::prepareRenderer()
 		if (frame->geometry == nullptr) return;
 		frame->renderer = std::make_shared<VoxelRenderer>();
 		frame->renderer->buildBuffers(*frame->geometry);
-	});	
+	});
 }
 
 void VoxelSprite::attachSpriteBehaviour(ISpriteManager& spriteManager, const std::shared_ptr<ISpriteBehaviour> behaviour, float executionDeferral)
@@ -224,7 +224,7 @@ bool VoxelSprite::collidesWith(const ISprite& other) const
 					{
 						return true;
 					}
-				}								
+				}
 			}
 		}
 	}

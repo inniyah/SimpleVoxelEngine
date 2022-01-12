@@ -9,7 +9,7 @@ MouseAndKeyboardCameraControllerInput::MouseAndKeyboardCameraControllerInput(GLF
 
 MouseAndKeyboardCameraControllerInput::~MouseAndKeyboardCameraControllerInput()
 {
-	
+
 }
 
 void MouseAndKeyboardCameraControllerInput::update(float timeDelta)

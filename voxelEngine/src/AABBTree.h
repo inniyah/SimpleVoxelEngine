@@ -23,7 +23,7 @@ struct AABBNode
 
 	AABBNode() : object(nullptr), parentNodeIndex(AABB_NULL_NODE), leftNodeIndex(AABB_NULL_NODE), rightNodeIndex(AABB_NULL_NODE), nextNodeIndex(AABB_NULL_NODE)
 	{
-		
+
 	}
 };
 
@@ -44,7 +44,7 @@ private:
 	void removeLeaf(unsigned leafNodeIndex);
 	void updateLeaf(unsigned leafNodeIndex, const AABB& newAaab);
 	void fixUpwardsTree(unsigned treeNodeIndex);
-	
+
 public:
 	AABBTree(unsigned initialSize);
 	~AABBTree();

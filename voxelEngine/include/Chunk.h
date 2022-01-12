@@ -10,14 +10,14 @@ class VoxelRenderer;
 class Chunk : public IChunk
 {
 private:
-	
+
 	std::vector<std::shared_ptr<IVoxel>> _voxels;
 	std::shared_ptr<VoxelContainerGeometry> _chunkGeometry;
 	std::shared_ptr<VoxelRenderer> _chunkRenderer;
 
 	static unsigned int getVoxelIndex(unsigned int x, unsigned int y, unsigned int z) { return z * IChunk::Height * IChunk::Width + y * IChunk::Width + x; }
 
-public:	
+public:
 	Chunk(const std::vector<std::shared_ptr<IVoxel>>& voxels);
 	~Chunk();
 

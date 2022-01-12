@@ -9,7 +9,7 @@ class Camera : public ICamera
 	glm::mat4 _projectionMatrix;
 	glm::vec3 _position;
 	float _verticalAngle;
-	float _horizontalAngle;	
+	float _horizontalAngle;
 	float _fieldOfView;
 	float _farDepth;
 	float _nearDepth;
@@ -29,7 +29,7 @@ public:
 	virtual ~Camera();
 
 	glm::mat4 getViewMatrix() const override { return _viewMatrix; }
-	glm::mat4 getProjectionMatrix() const override { return _projectionMatrix; }	
+	glm::mat4 getProjectionMatrix() const override { return _projectionMatrix; }
 	glm::vec3 getPosition() const override { return _position; }
 	float getVerticalAngle() const override { return _verticalAngle; }
 	float getHorizontalAngle() const override { return _horizontalAngle; }

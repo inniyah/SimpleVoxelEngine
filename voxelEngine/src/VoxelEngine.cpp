@@ -38,13 +38,13 @@ float VoxelEngine::tick(tickFunction updateCompleteFunc, tickFunction tickComple
 
 	double frameCurrentTime = glfwGetTime();
 	float timeDelta = _lastTickTime < 0 ? 0.0f : static_cast<float>(frameCurrentTime - _lastTickTime);
-	
+
 	_cameraInputController->update(timeDelta);
 	_camera->update(*_cameraInputController);
-	
+
 	if (_chunkManager != nullptr)
 	{
-		_chunkManager->tick(timeDelta);		
+		_chunkManager->tick(timeDelta);
 	}
 	if (_spriteManager != nullptr)
 	{

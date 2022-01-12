@@ -28,7 +28,7 @@ private:
 	std::vector<std::shared_ptr<IChunk>> _chunks;
 	std::vector<std::shared_ptr<ChunkRebuildInstruction>> _chunksRequiringRebuild;
 	std::shared_ptr<IChunkFactory> _chunkFactory;
-	
+
 	unsigned int getChunkIndex(unsigned int x, unsigned int y, unsigned int z) const { return z * _height * _width  + y * _width + x; }
 	void rebuildGeometry();
 	void constructChunks(const std::vector<std::shared_ptr<ChunkManager::ChunkRebuildInstruction>>& chunksRequiringConstruction);
@@ -50,6 +50,6 @@ public:
 	unsigned int getContainerDepthInVoxels() const override { return _depth * IChunk::Depth; }
 	void render(const ICamera& camera, const ILightSource& light) const override;
 	std::shared_ptr<IVoxel> getVoxel(unsigned int x, unsigned int y, unsigned int z) const override;
-	bool chunkInCamera(const ICamera& camera, unsigned x, unsigned y, unsigned z) const override;	
+	bool chunkInCamera(const ICamera& camera, unsigned x, unsigned y, unsigned z) const override;
 };
 

@@ -85,7 +85,7 @@ std::forward_list<std::shared_ptr<IAABB>> AABBTree::queryOverlaps(const std::sha
 	std::forward_list<std::shared_ptr<IAABB>> overlaps;
 	std::stack<unsigned> stack;
 	AABB testAabb = object->getAABB();
-	
+
 	stack.push(_rootNodeIndex);
 	while(!stack.empty())
 	{
@@ -154,7 +154,7 @@ void AABBTree::insertLeaf(unsigned leafNodeIndex)
 		else
 		{
 			AABB newLeftAabb = leafNode.aabb.merge(leftNode.aabb);
-			costLeft = (newLeftAabb.surfaceArea - leftNode.aabb.surfaceArea) + minimumPushDownCost;			
+			costLeft = (newLeftAabb.surfaceArea - leftNode.aabb.surfaceArea) + minimumPushDownCost;
 		}
 		if (rightNode.isLeaf())
 		{
@@ -169,7 +169,7 @@ void AABBTree::insertLeaf(unsigned leafNodeIndex)
 		// if the cost of creating a new parent node here is less than descending in either direction then
 		// we know we need to create a new parent node, errrr, here and attach the leaf to that
 		if (newParentNodeCost < costLeft && newParentNodeCost < costRight)
-		{			
+		{
 			break;
 		}
 
@@ -239,7 +239,7 @@ void AABBTree::removeLeaf(unsigned leafNodeIndex)
 	unsigned siblingNodeIndex = parentNode.leftNodeIndex == leafNodeIndex ? parentNode.rightNodeIndex : parentNode.leftNodeIndex;
 	assert(siblingNodeIndex != AABB_NULL_NODE); // we must have a sibling
 	AABBNode& siblingNode = _nodes[siblingNodeIndex];
-	
+
 	if (grandParentNodeIndex != AABB_NULL_NODE)
 	{
 		// if we have a grand parent (i.e. the parent is not the root) then destroy the parent and connect the sibling to the grandparent in its
@@ -272,7 +272,7 @@ void AABBTree::removeLeaf(unsigned leafNodeIndex)
 void AABBTree::updateLeaf(unsigned leafNodeIndex, const AABB& newAaab)
 {
 	AABBNode& node = _nodes[leafNodeIndex];
-	
+
 	// if the node contains the new aabb then we just leave things
 	// TODO: when we add velocity this check should kick in as often an update will lie within the velocity fattened initial aabb
 	// to support this we might need to differentiate between velocity fattened aabb and actual aabb

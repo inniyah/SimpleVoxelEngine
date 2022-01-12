@@ -34,7 +34,7 @@ void Chunk::forEachVoxel(const forEachVoxelFunction& func, bool includeNull) con
 				if (voxel != nullptr || includeNull)
 				{
 					func(voxel, x, y, z);
-				}				
+				}
 			}
 		}
 	}
@@ -42,7 +42,7 @@ void Chunk::forEachVoxel(const forEachVoxelFunction& func, bool includeNull) con
 
 void Chunk::rebuildGeometry(const IChunkManager& chunkManager, unsigned int chunkX, unsigned int chunkY, unsigned int chunkZ)
 {
-	_chunkGeometry = std::make_shared<VoxelContainerGeometry>(chunkManager, *this, chunkX, chunkY, chunkZ);	
+	_chunkGeometry = std::make_shared<VoxelContainerGeometry>(chunkManager, *this, chunkX, chunkY, chunkZ);
 }
 
 void Chunk::prepareRenderer()
