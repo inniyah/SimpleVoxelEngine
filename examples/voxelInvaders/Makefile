@@ -119,7 +119,6 @@ OBJS= \
 	$(OBJ_DIR)/BulletMovementSpriteBehaviour.o \
 	$(OBJ_DIR)/InvaderMovementSpriteBehaviour.o \
 	$(OBJ_DIR)/PlayerMovementBehaviour.o \
-	$(OBJ_DIR)/stdafx.o \
 	$(OBJ_DIR)/TerrainChunkFactory.o \
 	$(OBJ_DIR)/voxelInvaders.o
 

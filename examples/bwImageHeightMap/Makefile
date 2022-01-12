@@ -117,9 +117,7 @@ INCS= \
 
 OBJS= \
 	$(OBJ_DIR)/bwImageHeightMap.o \
-	$(OBJ_DIR)/ImageSourceChunkFactory.o \
-	$(OBJ_DIR)/stdafx.o
-
+	$(OBJ_DIR)/ImageSourceChunkFactory.o
 
 all: $(APP_NAME)
 

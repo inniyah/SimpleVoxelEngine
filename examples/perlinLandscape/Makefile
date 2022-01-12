@@ -118,9 +118,7 @@ INCS= \
 OBJS= \
 	$(OBJ_DIR)/perlinLandscape.o \
 	$(OBJ_DIR)/PerlinNoiseChunkFactory.o \
-	$(OBJ_DIR)/PerlinNoise.o \
-	$(OBJ_DIR)/stdafx.o
-
+	$(OBJ_DIR)/PerlinNoise.o
 
 all: $(APP_NAME)
 

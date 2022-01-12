@@ -117,9 +117,7 @@ INCS= \
 
 OBJS= \
 	$(OBJ_DIR)/TerrainChunkFactory.o \
-	$(OBJ_DIR)/sprites.o \
-	$(OBJ_DIR)/stdafx.o
-
+	$(OBJ_DIR)/sprites.o
 
 all: $(APP_NAME)
 
